@@ -1,17 +1,27 @@
+:root {
+    --bgcolor: wheat;
+}
+
 html{box-sizing: content-box;}
+
+main {
+    display: inline-block;
+}
+
 table {
     border-collapse:collapse;
     table-layout: fixed;
     width: calc(13*7rem);
 }
+
 h1{
     text-align: center;
-    
+
 }
 
-/* td{
-    background-color: wheat;
-} */
+tbody {
+    background-color: var(--bgcolor);
+}
 
 td:empty{
     background-color: rgba(192, 192, 192);
@@ -22,7 +32,8 @@ caption{
     caption-side: bottom;
 }
 
-thead th{
+/* Replace this WET (We Enjoy Typing) version with...
+/* thead th{
     position: sticky;
     top: 0 ;
     background-color: black;
@@ -40,26 +51,50 @@ tbody th{
     background-color: #333;
     color: white;
     text-align: right;
+} */
+
+/* ... a DRY version */
+th {
+    position: sticky; /* also applies to the col for days */
+    background-color: black;
+    color: white;
 }
 
+thead th {
+  top: 0;
+}
+
+tfoot th{
+  bottom: 0 ;
+}
+
+tbody th{
+  background-color: #333; /* override line 53 */
+  text-align: right;
+  left: 0; /* works with line 52 */
+}
+
+/* End of DRY version */
 
 
 tbody td{
     text-align: center;
     border: solid black 1px;
-    
-}
 
-/* tbody tr:nth-child(3){
-    background-color: chartreuse;
-} */
+}
 
 tbody .Saturday,tbody .Sunday{
     background-color: chartreuse;
 }
 
+/* This would colour the weekends green, too */
+/* tr:nth-child(7n-1),
+tr:nth-child(7n){
+    background-color: chartreuse;
+} */
+
 /* tfoot .November */
-.pic{
+/* .pic{
         position: absolute;
         top: -4.4rem;
         background-image: url(../img/newyear.jpg);
@@ -68,7 +103,13 @@ tbody .Saturday,tbody .Sunday{
         height: 4.2rem;
         border: black 2px solid;
         z-index: 3;
-    }
-    
+    } */
 
-    
+td[colspan] {
+    border: 1px solid black;
+    background-color:  var(--bgcolor);
+    background-image: url(../img/newyear.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
