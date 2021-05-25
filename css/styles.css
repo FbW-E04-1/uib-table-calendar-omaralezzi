@@ -1,0 +1,74 @@
+html{box-sizing: content-box;}
+table {
+    border-collapse:collapse;
+    table-layout: fixed;
+    width: calc(13*7rem);
+}
+h1{
+    text-align: center;
+    
+}
+
+/* td{
+    background-color: wheat;
+} */
+
+td:empty{
+    background-color: rgba(192, 192, 192);
+    border: none;
+}
+
+caption{
+    caption-side: bottom;
+}
+
+thead th{
+    position: sticky;
+    top: 0 ;
+    background-color: black;
+    color: white;
+}
+
+tfoot th{
+    position: sticky;
+    bottom: 0 ;
+    background-color: black;
+    color: white;
+}
+
+tbody th{
+    background-color: #333;
+    color: white;
+    text-align: right;
+}
+
+
+
+tbody td{
+    text-align: center;
+    border: solid black 1px;
+    
+}
+
+/* tbody tr:nth-child(3){
+    background-color: chartreuse;
+} */
+
+tbody .Saturday,tbody .Sunday{
+    background-color: chartreuse;
+}
+
+/* tfoot .November */
+.pic{
+        position: absolute;
+        top: -4.4rem;
+        background-image: url(../img/newyear.jpg);
+        background-size: cover;
+        width: 8rem;
+        height: 4.2rem;
+        border: black 2px solid;
+        z-index: 3;
+    }
+    
+
+    
